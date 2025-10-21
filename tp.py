@@ -27,6 +27,33 @@ print(os.path.getsize("./lenna.png") / os.path.getsize("./toto.png"))
 
 #EXERCICE 2
 
-git config --global user.email "lebon233@unicaen;fr"
-git config --global user.name "lucas"
+pixels_2 = np.array(img)
+arr = pixels_2[::2, :]
 
+image_ex2 = Image.fromarray(arr)
+image_ex2.save("image_ex2.png")
+print(os.path.getsize("./lenna.png"))
+print(os.path.getsize("./image_ex2.png"))
+print(os.path.getsize("./lenna.png") / os.path.getsize("./image_ex2.png"))
+
+
+#EXERCICE 3
+
+pixels_3 = np.array(img)
+arr1 = pixels_3[:, ::2]
+image_ex3 = Image.fromarray(arr1)
+image_ex3.save("image_ex3.png")
+print(os.path.getsize("./lenna.png"))
+print(os.path.getsize("./image_ex3.png"))
+print(os.path.getsize("./lenna.png") / os.path.getsize("./image_ex3.png"))
+
+
+#EXERCICE 4
+
+pixels_4 = np.array(img)
+arr1 = pixels_4[::2, ::2]
+image_ex4 = Image.fromarray(arr1)
+image_ex4.save("image_ex4.png")
+print(os.path.getsize("./lenna.png"))
+print(os.path.getsize("./image_ex4.png"))
+print(os.path.getsize("./lenna.png") / os.path.getsize("./image_ex4.png"))
