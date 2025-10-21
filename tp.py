@@ -57,3 +57,27 @@ image_ex4.save("image_ex4.png")
 print(os.path.getsize("./lenna.png"))
 print(os.path.getsize("./image_ex4.png"))
 print(os.path.getsize("./lenna.png") / os.path.getsize("./image_ex4.png"))
+
+#EXERCICE 5
+
+pixels_5 = np.array(img)
+arr1 = pixels_5[::2, ::2]
+arr2 = np.repeat(
+    np.repeat(arr1, 2, 0), 2, 1
+)
+image_ex5 = Image.fromarray(arr2)
+image_ex5.save("image_ex5.png")
+print(os.path.getsize("./lenna.png"))
+print(os.path.getsize("./image_ex5.png"))
+print(os.path.getsize("./lenna.png") / os.path.getsize("./image_ex5.png"))
+
+
+#EXERCICE 6
+
+pixels_5 = np.array(img)
+arr1 = pixels_5[::2, ::2]
+
+arr2 = np.empty((img.shape[0] * 2 -1, img.shape[1]), dtype=np.uint8)
+
+for i in range(img.shape[0] -1):
+    arr2[2 * i, :] = img
